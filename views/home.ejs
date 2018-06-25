@@ -1,0 +1,26 @@
+<% include partials/header %>
+    <h1><%= topicHead %></h1>
+    <% if (errors != undefined) { %>
+  <h3>Following errors are there.</h3>
+  <ul>
+    <% errors.forEach(function(error){
+      %><li><%= error.msg %></li>
+    <% })%>
+  </ul>
+  <% }%>
+    <form name="form1" method="POST" action="/student/add">
+    <table>
+        <tr>
+        <td>First name</td>
+        <td><input type="text" name="fname" value="<%= userValue.fname%>" ></td>
+        </tr>
+        <tr>
+        <td>last name</td>
+        <td><input type="text" name="lname" value="<%= userValue.lname%>" ></td>
+        </tr>
+        <tr>
+        <td colspan="2"><input type="submit" value="Save" ></td>
+        </tr>
+    </table>
+    </form>
+  <% include partials/footer %>
