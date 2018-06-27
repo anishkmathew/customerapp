@@ -1,6 +1,6 @@
 <% include partials/header %>
     <h1><%= topicHead %></h1>
-    <% if (errors != undefined) { %>
+      <% if (errors != undefined) { %>
   <h3>Following errors are there.</h3>
   <ul>
     <% errors.forEach(function(error){
@@ -12,11 +12,11 @@
     <table>
         <tr>
         <td>First name</td>
-        <td><input type="text" name="fname" value="<%= userValue.fname%>" ></td>
+        <td><input type="text" name="fname" value="<% if (userValue != null){ %><%=userValue.fname%><%}%>" ></td>
         </tr>
         <tr>
         <td>last name</td>
-        <td><input type="text" name="lname" value="<%= userValue.lname%>" ></td>
+        <td><input type="text" name="lname" value="<% if (userValue != null){ %><%=userValue.lname%><%}%>" ></td>
         </tr>
         <tr>
         <td colspan="2"><input type="submit" value="Save" ></td>

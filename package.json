@@ -9,6 +9,7 @@
   "dependencies": {
     "body-parser": "*",
     "ejs": "^2.6.1",
+    "ejs-lint": "^0.3.0",
     "express": "*",
     "express-validator": "^5.2.0"
   },

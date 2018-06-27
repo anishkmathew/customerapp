@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const ejsLint = require('ejs-lint');
 //const expressValidator = require('express-validator')
 const { check, validationResult } = require('express-validator/check');
 var app = express();
@@ -38,9 +39,11 @@ app.set('views',path.join(__dirname,'views'))
 
 //Student form
 app.get('/',function(req,res){
+    var userValue = null;
     res.render('home',{
         topicHead : 'Student Form',
-        title : 'Customer App'
+        title : 'Customer App',
+        userValue : userValue
     });
     //console.log('Body : ' + req.body.fname);
     console.log('user accessing Home page');
