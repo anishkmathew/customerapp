@@ -12,15 +12,25 @@
     <table>
         <tr>
         <td>First name</td>
-        <td><input type="text" name="fname" value="<% if (userValue != null){ %><%=userValue.fname%><%}%>" ></td>
+        <td><input type="text" id="fname" name="fname" value="<%=userValue.fname%>" ></td>
         </tr>
         <tr>
         <td>last name</td>
-        <td><input type="text" name="lname" value="<% if (userValue != null){ %><%=userValue.lname%><%}%>" ></td>
+        <td><input type="text" id="lname" name="lname" value="<%=userValue.lname%>" ></td>
         </tr>
         <tr>
-        <td colspan="2"><input type="submit" value="Save" ></td>
+        <td colspan="2">
+          <input type="hidden" value="" name="editid" id="editid">
+          <input type="submit" value="Save" ></td>
         </tr>
     </table>
     </form>
+    <% if (userValues != undefined) { %>
+<h3>Following users are there.</h3>
+<ul>
+  <% userValues.forEach(function(user){
+    %><li><%= user.fname  %> <%= user.lname  %> - <a class="deleteUser" data-id="<%=user._id%>" href="#">Delete</a>- <a class="editUser" data-id="<%=user._id%>" href="#">Edit</a> </li>
+  <% })%>
+</ul>
+<% }%>
   <% include partials/footer %>
